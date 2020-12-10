@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public enum State
+    private enum State
     {
         None,
         Idle,
@@ -30,8 +30,9 @@ public class Player : MonoBehaviour
     private bool facingRight_ = true;
     private bool jumpButtonDown_ = false;
     private bool interactButtonDown_ = false;
+    private Teleporter currentTeleporter;
 
-    void Start()
+    private void Start()
     {
         ChangeState(State.Jump);
     }
@@ -49,13 +50,14 @@ public class Player : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         float moveDir = 0.0f;
         if (Input.GetKey(KeyCode.A))
         {
             moveDir -= 1.0f;
         }
+
         if (Input.GetKey(KeyCode.D))
         {
             moveDir += 1.0f;
@@ -65,11 +67,12 @@ public class Player : MonoBehaviour
         {
             Jump();
         }
+
         jumpButtonDown_ = false;
 
         var vel = body.velocity;
         body.velocity = new Vector2(MoveSpeed * moveDir, vel.y);
-        
+
         if (moveDir > DeadZone && !facingRight_)
         {
             Flip();
@@ -79,7 +82,7 @@ public class Player : MonoBehaviour
         {
             Flip();
         }
-        
+
         switch (currentState_)
         {
             case State.Idle:
@@ -92,6 +95,7 @@ public class Player : MonoBehaviour
                 {
                     ChangeState(State.Jump);
                 }
+
                 break;
             case State.Walk:
                 if (Mathf.Abs(moveDir) < DeadZone)
@@ -103,17 +107,19 @@ public class Player : MonoBehaviour
                 {
                     ChangeState(State.Jump);
                 }
+
                 break;
             case State.Jump:
                 if (foot.FootContact > 0)
                 {
                     ChangeState(State.Idle);
                 }
+
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
-        
+
     }
 
     private void Jump()
@@ -147,5 +153,4 @@ public class Player : MonoBehaviour
         spriteRenderer.flipX = !spriteRenderer.flipX;
         facingRight_ = !facingRight_;
     }
-
 }
