@@ -12,7 +12,8 @@ public class Player : MonoBehaviour
         None,
         Idle,
         Walk,
-        Jump
+        Jump,
+        Walljump
     }
 
     private State currentState_ = State.None;
@@ -21,6 +22,9 @@ public class Player : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Rigidbody2D body;
     [SerializeField] private PlayerFoot foot;
+    [SerializeField] private PlayerFront front;
+    
+    
 
 
     private const float DeadZone = 0.1f;
@@ -34,7 +38,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        ChangeState(State.Jump);
+        ChangeState(State.Idle);
     }
 
     private void Update()
