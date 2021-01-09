@@ -9,10 +9,31 @@ public class Teleporter : MonoBehaviour
 {
     //Player can interact with a door to "teleport" to another door
     
-    [SerializeField] private Transform endTransform;
+    public GameObject Door;
+    public GameObject Player;
 
-    public void Teleport()
+    private void Start()
     {
-       transform.position = endTransform.position;
+        
+    }
+
+    private void Update()
+    {
+        
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            StartCoroutine(Teleport());
+        }
+    }
+
+    private IEnumerator Teleport()
+    {
+        yield return new WaitForSeconds (0.5f);
+        Player.transform.position = new Vector3(Door.transform.position.x, Door.transform.position.y, 
+            0.0f);
     }
 }
