@@ -21,8 +21,7 @@ public class Player : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Rigidbody2D body;
     [SerializeField] private PlayerFoot foot;
-    [SerializeField] private PlayerFront front;
-    
+
     private const float DeadZone = 0.1f;
     private const float MoveSpeed = 2.0f;
     private const float JumpSpeed = 5.0f;
