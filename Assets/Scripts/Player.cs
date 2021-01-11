@@ -12,8 +12,7 @@ public class Player : MonoBehaviour
         None,
         Idle,
         Walk,
-        Jump,
-        Walljump
+        Jump
     }
 
     private State currentState_ = State.None;
@@ -24,17 +23,14 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerFoot foot;
     [SerializeField] private PlayerFront front;
     
-    
-
-
     private const float DeadZone = 0.1f;
     private const float MoveSpeed = 2.0f;
     private const float JumpSpeed = 5.0f;
 
     private bool facingRight_ = true;
     private bool jumpButtonDown_ = false;
-    private bool interactButtonDown_ = false;
-    private Teleporter currentTeleporter;
+    //private bool interactButtonDown_ = false;
+    
 
     private void Start()
     {
@@ -48,10 +44,10 @@ public class Player : MonoBehaviour
             jumpButtonDown_ = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        /*if (Input.GetKeyDown(KeyCode.E))
         {
             interactButtonDown_ = true;
-        }
+        }*/
     }
 
     private void FixedUpdate()
@@ -125,7 +121,7 @@ public class Player : MonoBehaviour
         }
 
     }
-
+    
     private void Jump()
     {
         var vel = body.velocity;
@@ -151,7 +147,6 @@ public class Player : MonoBehaviour
 
         currentState_ = state;
     }
-
     void Flip()
     {
         spriteRenderer.flipX = !spriteRenderer.flipX;
