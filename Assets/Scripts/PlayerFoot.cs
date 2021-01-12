@@ -18,6 +18,10 @@ public class PlayerFoot : MonoBehaviour
         {
             footContact_++;
         }
+        /*if (other.gameObject.layer == LayerMask.NameToLayer("wall"))
+        {
+            footContact_++;
+        }*/
     }
 
     private void OnTriggerExit2D(Collider2D other)
