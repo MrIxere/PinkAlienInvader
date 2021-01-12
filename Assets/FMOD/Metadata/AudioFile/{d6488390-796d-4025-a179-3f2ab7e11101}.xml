@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{d6488390-796d-4025-a179-3f2ab7e11101}">
+		<property name="assetPath">
+			<value>slightscream-11.flac</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.33034013605442175</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{38c26413-ec0a-42e5-9067-72379fd390e6}</destination>
+		</relationship>
+	</object>
+</objects>
