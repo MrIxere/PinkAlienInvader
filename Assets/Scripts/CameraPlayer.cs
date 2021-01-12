@@ -20,7 +20,6 @@ public class CameraPlayer : MonoBehaviour
    private void FixedUpdate()
    {
       transform.position = new Vector3(playerCharacter.position.x, playerCharacter.position.y, transform.position.z);
-      //Screen.width / 2, Screen.height / 2;
       transform.position = Clamp(transform.position, 
          new Vector3(left.position.x, bottom.position.y, transform.position.z),
          new Vector3(right.position.x, top.position.y, transform.position.z));

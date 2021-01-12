@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -21,8 +22,8 @@ public class Player : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Rigidbody2D body;
     [SerializeField] private PlayerFoot foot;
-
-    private const float DeadZone = 0.1f;
+    
+    private const float DeadZone = 0.001f;
     private const float MoveSpeed = 2.0f;
     private const float JumpSpeed = 5.0f;
 
@@ -30,7 +31,7 @@ public class Player : MonoBehaviour
     private bool jumpButtonDown_ = false;
     //private bool interactButtonDown_ = false;
     
-
+    
     private void Start()
     {
         ChangeState(State.Idle);
@@ -51,16 +52,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float moveDir = 0.0f;
-        if (Input.GetKey(KeyCode.A))
-        {
-            moveDir -= 1.0f;
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            moveDir += 1.0f;
-        }
+        float moveDir = Input.GetAxis("Horizontal");
 
         if (foot.FootContact > 0 && jumpButtonDown_)
         {
@@ -106,6 +98,7 @@ public class Player : MonoBehaviour
                 {
                     ChangeState(State.Jump);
                 }
+                FindObjectOfType<AudioManager>().Play("Walk");
 
                 break;
             case State.Jump:
@@ -125,6 +118,7 @@ public class Player : MonoBehaviour
     {
         var vel = body.velocity;
         body.velocity = new Vector2(vel.x, JumpSpeed);
+        FindObjectOfType<AudioManager>().Play("Jump");
     }
 
     void ChangeState(State state)

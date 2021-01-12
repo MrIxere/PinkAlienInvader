@@ -456,8 +456,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../PlatformerUnity920/fmod/fmod.fspro
-  sourceBankPath: ..\PlatformerUnity920\fmod\Build
+  sourceProjectPath: Assets/FMOD/fmod.fspro
+  sourceBankPath: Assets\FMOD\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0
@@ -476,14 +476,15 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
+  MasterBanks:
+  - Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
   AndroidUseOBB: 0
   MeterChannelOrdering: 0
-  MigratedPlatforms: 0c000000150000000b0000000a00000009000000120000000800000005000000060000000200000001000000
+  MigratedPlatforms: 010000000200000006000000050000000800000012000000090000000a0000000b000000150000000c000000
 --- !u!114 &522795525614225372
 MonoBehaviour:
   m_ObjectHideFlags: 0

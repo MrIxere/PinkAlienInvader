@@ -16,6 +16,8 @@ public class Respawn : MonoBehaviour
         {
             player.transform.position = respawn.transform.position;
             Physics.SyncTransforms();
+
+            FindObjectOfType<AudioManager>().Play("PlayerDeath");
         }
     }
 }

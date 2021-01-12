@@ -9,8 +9,8 @@ public class Teleporter : MonoBehaviour
 {
     //Player can interact with a door to "teleport" to another door
     
-    public GameObject Door;
-    public GameObject Player;
+    public GameObject door;
+    public GameObject player;
 
     private void Start()
     {
@@ -33,7 +33,7 @@ public class Teleporter : MonoBehaviour
     private IEnumerator Teleport()
     {
         yield return new WaitForSeconds (0.5f);
-        Player.transform.position = new Vector3(Door.transform.position.x, Door.transform.position.y, 
+        player.transform.position = new Vector3(door.transform.position.x, door.transform.position.y, 
             0.0f);
     }
 }
