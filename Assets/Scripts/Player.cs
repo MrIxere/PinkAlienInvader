@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using InControl;
 
 public class Player : MonoBehaviour
 {
@@ -31,7 +32,7 @@ public class Player : MonoBehaviour
     private bool jumpButtonDown_ = false;
     //private bool interactButtonDown_ = false;
     
-    
+
     private void Start()
     {
         ChangeState(State.Idle);
@@ -39,7 +40,14 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        var inputDevice = InputManager.ActiveDevice;
+        
         if (Input.GetKeyDown(KeyCode.Space))
+        {
+            jumpButtonDown_ = true;
+        }
+
+        if (Input.GetButtonDown("Jump"))
         {
             jumpButtonDown_ = true;
         }
@@ -58,6 +66,7 @@ public class Player : MonoBehaviour
         {
             Jump();
         }
+        
 
         jumpButtonDown_ = false;
 
@@ -98,7 +107,6 @@ public class Player : MonoBehaviour
                 {
                     ChangeState(State.Jump);
                 }
-                FindObjectOfType<AudioManager>().Play("Walk");
 
                 break;
             case State.Jump:
@@ -120,7 +128,7 @@ public class Player : MonoBehaviour
         body.velocity = new Vector2(vel.x, JumpSpeed);
         FindObjectOfType<AudioManager>().Play("Jump");
     }
-
+    
     void ChangeState(State state)
     {
         switch (state)

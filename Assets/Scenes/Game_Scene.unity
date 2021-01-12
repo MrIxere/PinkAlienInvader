@@ -1127,6 +1127,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a36579bc48dc54a4c8545d9ca83bf229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &457336260 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4645524361329759011, guid: 3616d74289650864a8e0c81ea03a7b28, type: 3}
+  m_PrefabInstance: {fileID: 4645524361599374232}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &481458492 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 764065377317664516, guid: 1135c91f5bb5afc4d9bc1f238fe706db, type: 3}
@@ -1267,6 +1272,11 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!1 &505387650 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4645524361002316943, guid: 3616d74289650864a8e0c81ea03a7b28, type: 3}
+  m_PrefabInstance: {fileID: 4645524361599374232}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &506217824 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1897930778339681794, guid: 438fddb7209e75a42a8ace5603665e3e, type: 3}
@@ -2172,6 +2182,11 @@ PrefabInstance:
       objectReference: {fileID: 1496629235}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8924539e94a916e4b8ff2ca52cffdea2, type: 3}
+--- !u!1 &959595188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4645524362069928705, guid: 3616d74289650864a8e0c81ea03a7b28, type: 3}
+  m_PrefabInstance: {fileID: 4645524361599374232}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &965037456 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1897930778339681796, guid: 438fddb7209e75a42a8ace5603665e3e, type: 3}
@@ -4904,6 +4919,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4645524360979833093, guid: 3616d74289650864a8e0c81ea03a7b28, type: 3}
+      propertyPath: pauseExitButton
+      value: 
+      objectReference: {fileID: 505387650}
+    - target: {fileID: 4645524360979833093, guid: 3616d74289650864a8e0c81ea03a7b28, type: 3}
+      propertyPath: pauseMenuButton
+      value: 
+      objectReference: {fileID: 457336260}
+    - target: {fileID: 4645524360979833093, guid: 3616d74289650864a8e0c81ea03a7b28, type: 3}
+      propertyPath: pauseResumeButton
+      value: 
+      objectReference: {fileID: 959595188}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3616d74289650864a8e0c81ea03a7b28, type: 3}
 --- !u!1001 &4786103245401648676
